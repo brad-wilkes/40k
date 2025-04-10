@@ -84,11 +84,35 @@ legions = {
         'primarch' : 'alfarius',
         'traitor' : True,
         'number' : 11
-    }
+    },
+    'emperor\'s children' : {
+        'primarch' : 'fulgrim',
+        'traitor' : True,
+        'number' : 4
+    },
 }
 
 def detail_astartes():
     for legion, primarch in legions.items():
-        print(f"The primarch of {legion} is {primarch['primarch']}")
+        print(f"The primarch of {legion} is {primarch['primarch'].title()}")
+        if primarch['traitor']:
+            print(f"\tDeath to the Anathema")
+        else:
+            print(f"\tKill the heretics")
 
-detail_astartes()  # Call the function to display the information
+#Define a method that will separate the traitor and loyalist legions into separate lists
+def bifurcate_astartes():
+    # create two new lists to hold each group of legions
+    loyalists = []
+    traitors = []
+    for legion, allegiance in legions.items():
+        if allegiance['traitor']:
+            traitors.append(legion)
+        else:
+            loyalists.append(legion)
+    print(loyalists)
+    print(traitors)
+
+bifurcate_astartes()
+
+# detail_astartes()  # Call the function to display the information
