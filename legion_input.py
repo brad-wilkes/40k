@@ -101,7 +101,7 @@ while repeat:
         # The following loop basically performs a query against the dictionary using user input as the parameter
         for legion, primarch in legions.items():
             if user_input == legion:
-                print(f"\nThe primarch of {user_input} is {primarch['primarch']}")
+                print(f"\n\tThe primarch of {user_input} is {primarch['primarch']}\n")
             else:
                 print(f"User input does not match key {legion} ")
     else:
