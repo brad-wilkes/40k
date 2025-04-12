@@ -1,5 +1,3 @@
-from evdev.genecodes_py import value
-
 legions = {
     'sons of horus' : {
         'primarch' : 'horus',
@@ -100,5 +98,11 @@ while repeat:
     user_input = input(prompt)
     if user_input != 'quit':
         print(user_input)
+        # The following loop basically performs a query against the dictionary using user input as the parameter
+        for legion, primarch in legions.items():
+            if user_input == legion:
+                print(f"\nThe primarch of {user_input} is {primarch['primarch']}")
+            else:
+                print(f"User input does not match key {legion} ")
     else:
         repeat = False
