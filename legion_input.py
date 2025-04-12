@@ -91,7 +91,14 @@ legions = {
     },
 }
 
-prompt = "Enter the name of a legion. "
+def query_legions(legion):
+    for legion, primarch in legions.items():
+        if user_input == legion:
+            print(f"\n\tThe primarch of {user_input.title()} is {primarch['primarch'].title()}\n")
+        else:
+            print(f"User input does not match key {legion.title()} ")
+
+prompt = "\nEnter the name of a legion. "
 prompt += "\nEnter quit to exit: "
 repeat = True
 while repeat:
@@ -99,10 +106,4 @@ while repeat:
     if user_input == 'quit':
         repeat = False
     else:
-        print(user_input)
-        # The following loop basically performs a query against the dictionary using user input as the parameter
-        for legion, primarch in legions.items():
-            if user_input == legion:
-                print(f"\n\tThe primarch of {user_input.title()} is {primarch['primarch'].title()}\n")
-            else:
-                print(f"User input does not match key {legion.title()} ")
+        query_legions(user_input)
