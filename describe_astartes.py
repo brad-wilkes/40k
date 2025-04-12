@@ -131,6 +131,10 @@ def bifurcate_astartes():
     print(loyalists)
     print(traitors)
 
-bifurcate_astartes()
 
-detail_astartes()  # Call the function to display the information
+def query_legions(user_input):
+    for legion, primarch in legions.items():
+        if user_input == legion:
+            print(f"\n\tThe primarch of {user_input.title()} is {primarch['primarch'].title()}\n")
+        else:
+            continue
