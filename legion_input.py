@@ -96,7 +96,7 @@ def query_legions(legion):
         if user_input == legion:
             print(f"\n\tThe primarch of {user_input.title()} is {primarch['primarch'].title()}\n")
         else:
-            print(f"User input does not match key {legion.title()} ")
+            continue
 
 prompt = "\nEnter the name of a legion. "
 prompt += "\nEnter quit to exit: "
