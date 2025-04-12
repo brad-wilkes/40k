@@ -115,4 +115,4 @@ def bifurcate_astartes():
 
 bifurcate_astartes()
 
-# detail_astartes()  # Call the function to display the information
+detail_astartes()  # Call the function to display the information
