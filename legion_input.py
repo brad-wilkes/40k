@@ -8,5 +8,5 @@ while repeat:
     if user_input == 'quit':
         repeat = False
     else:
-        describe_astartes.query_legions(user_input)
-        describe_astartes.bifurcate_astartes(user_input)
+        describe_astartes.get_primarch(user_input)
+        describe_astartes.get_allegiance(user_input)
