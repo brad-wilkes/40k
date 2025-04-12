@@ -110,6 +110,7 @@ legions = {
     },
 }
 
+# Prints legion, primarch, and traitor status based on the dictionary attributes
 def detail_astartes():
     for legion, primarch in legions.items():
         print(f"The primarch of {legion} is {primarch['primarch'].title()}")
@@ -118,9 +119,9 @@ def detail_astartes():
         else:
             print(f"\tKill the heretics")
 
-#Define a method that will separate the traitor and loyalist legions into separate lists
-def bifurcate_astartes():
-    # create two new lists to hold each group of legions
+# Separates the traitor and loyalist legions into two lists
+def bifurcate_astartes(user_astartes):
+    # create two empty lists to hold each group
     loyalists = []
     traitors = []
     for legion, allegiance in legions.items():
@@ -128,10 +129,12 @@ def bifurcate_astartes():
             traitors.append(legion)
         else:
             loyalists.append(legion)
-    print(loyalists)
-    print(traitors)
+    if user_astartes == 'traitors':
+        print(f"\n{user_astartes} are a traitor legion")
+    else:
+        print(f"\n{user_astartes} are a loyalist legion")
 
-
+# Match parameters to the dictionary keys
 def query_legions(user_input):
     for legion, primarch in legions.items():
         if user_input == legion:

@@ -9,3 +9,4 @@ while repeat:
         repeat = False
     else:
         describe_astartes.query_legions(user_input)
+        describe_astartes.bifurcate_astartes(user_input)
