@@ -117,7 +117,7 @@ def detail_astartes():
         if primarch['traitor']:
             print(f"\tDeath to the Anathema. {primarch['battlecry']}")
         else:
-            print(f"\tKill the heretics. {primarch['battlecry']}")
+            print(f"\tFor the Emperor of Mankind. {primarch['battlecry']}")
 
 # Separates the traitor and loyalist legions into two lists
 def get_allegiance(user_astartes):
@@ -130,14 +130,16 @@ def get_allegiance(user_astartes):
         else:
             loyalists.append(legion)
     if user_astartes in traitors:
-        print(f"\n{user_astartes} are a traitor legion")
+        print(f"\n\tThe {user_astartes.title()} are a traitor legion")
+    elif user_astartes in loyalists:
+        print(f"\n\tThe {user_astartes.title()} are a loyalist legion")
     else:
-        print(f"\n{user_astartes} are a loyalist legion")
+        print(f"\n\t{user_astartes} not found")
 
-# Match parameters to the dictionary keys
+# Match parameter (user input) to the dictionary keys (legions)
 def get_primarch(user_input):
     for legion, primarch in legions.items():
         if user_input == legion:
-            print(f"\n\tThe primarch of {user_input.title()} is {primarch['primarch'].title()}\n")
+            print(f"\nThe primarch of {user_input.title()} is {primarch['primarch'].title()}")
         else:
             continue
